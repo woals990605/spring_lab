@@ -38,9 +38,18 @@ public class UserController {
     // 회원가입 - 로그인 X
     @PostMapping("/join")
     public String join(User user) {
-        System.out.println("user : " + user);
-        User userentity = userRepository.save(user);
-        System.out.println("userentity : " + userentity);
+
+        // 1.username, password, email 1.null 체크 2.공백체크
+        if (user.getUsername() == null || user.getPassword() == null || user.getEmail() == null) {
+            return "redirect:/joinForm";
+        }
+        if (user.getUsername().equals("") || user.getPassword().equals("") || user.getEmail().equals("")) {
+            return "redirect:/joinForm";
+        }
+
+        // 2.핵심로직
+        User userEntity = userRepository.save(user);
+        System.out.println("userEntity : " + userEntity);
         // redirect : 매핑주소
         return "redirect:/loginForm"; // 로그인페이지 이동해주는 컨트롤러 메서드를 재활용
     }
@@ -98,6 +107,8 @@ public class UserController {
         } else {
             return "error/page1";
         }
+
+        // DB에 로그 남기기 (로그인 한 아이디)
     }
 
     // 유저수정 페이지 (동적) - 로그인 O
