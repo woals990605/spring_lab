@@ -11,6 +11,8 @@ server:
 # ddl-auto : none는 서버 실행할 때마다 아무것도 하지 않는 옵션이다.
 # ddl-auto : update는 필드 수정시에 필요한 옵션이다.
 spring:
+  mustache:
+    expose-session-attributes: true
   datasource:
       url: jdbc:mariadb://localhost:3306/greendb
       driver-class-name: org.mariadb.jdbc.Driver
@@ -19,7 +21,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
