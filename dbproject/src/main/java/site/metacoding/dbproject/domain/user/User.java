@@ -9,6 +9,7 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -56,4 +57,8 @@ public class User {
     private LocalDateTime createDate;
     @LastModifiedDate // insert, update
     private LocalDateTime updateDate;
+
+    /////////////////////////////////////////// DB테이블과 상관없음
+    @Transient
+    private String remember;
 }
