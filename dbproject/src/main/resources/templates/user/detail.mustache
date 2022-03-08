@@ -1,24 +1,24 @@
 {{> /layout/header}}
 
-    <!-- 컨테이너 시작 -->
-    <div class="container mt-3">
+<!-- 컨테이너 시작 -->
+<div class="container mt-3">
 
-        <!-- 상세정보보기 시작 -->
+    <!-- 상세정보보기 시작 -->
 
-            <div class="mb-3 mt-3">
-                {{user.username}}
-            </div>
-            <div class="mb-3">
-                {{user.password}}
-            </div>
-            <div class="mb-3">
-                {{user.email}}
-              </div>
-            <a href="/s/user/updateForm" class="btn btn-dark">수정 페이지이동</a>
-
-        <!-- 상세정보보기 끝 -->
-
+    <div class="mb-3 mt-3">
+        {{user.username}}
     </div>
-    <!-- 컨테이너 끝 -->
-    
+    <div class="mb-3">
+        {{user.password}}
+    </div>
+    <div class="mb-3">
+        {{user.email}}
+    </div>
+    <a href="/s/user/updateForm" class="btn btn-dark">수정 페이지이동</a>
+
+    <!-- 상세정보보기 끝 -->
+
+</div>
+<!-- 컨테이너 끝 -->
+
 {{> /layout/footer}}

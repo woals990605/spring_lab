@@ -152,12 +152,14 @@ public class UserController {
     // 유저수정 페이지 (동적) - 로그인O
     @GetMapping("/s/user/updateForm")
     public String updateForm() {
+
         return "user/updateForm";
     }
 
     // 유저수정 - 로그인O
     @PutMapping("/s/user/{id}")
     public String update(@PathVariable Integer id) {
+
         return "redirect:/user/" + id;
     }
 
