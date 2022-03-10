@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>PCR정보조회</h1>
+
+<table id="customers">
+  <tr>
+    <th>아이디</th>
+    <th>주소</th>
+    <th>운영시작일자</th>
+    <th>PCR가능여부</th>
+    <th>RAT가능여부</th>
+    <th>요양종별코드</th>
+    <th>시군구명</th>
+    <th>시도명</th>
+    <th>요양기관명</th>
+    <th>암호화된요양기호</th>
+  </tr>
+  {{#Hospitals}}
+  <tr>
+    <td>{{id}}</td>
+    <td>{{addr}}</td>
+    <td>{{mgtStaDd}}</td>
+    <td>{{pcrPsblYn}}</td>
+    <td>{{ratPsblYn}}</td>
+    <td>{{recuClCd}}</td>
+    <td>{{sgguCdNm}}</td>
+    <td>{{sidoCdNm}}</td>
+    <td>{{yadmNm}}</td>
+    <td>{{ykihoEnc}}</td>
+  </tr>
+  {{/Hospitals}}
+</table>
+
+</body>
+</html>
+
+
