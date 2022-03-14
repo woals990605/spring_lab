@@ -18,7 +18,7 @@ public class Hospital {
 
     private String addr;
 
-    private String mgtStaDd;
+    private Long mgtStaDd;
 
     private String pcrPsblYn;
 
