@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: utf-8
+    session:
+      timeout: 30
+
+spring:
+  mustache:
+    expose-session-attributes: true
+  datasource:
+      url: jdbc:h2:mem:test
+      driver-class-name: org.h2.Driver
+      username: sa
+      password: 
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate.format_sql: true
+
+  output:
+    ansi:
+      enabled: always
